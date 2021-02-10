@@ -56,6 +56,13 @@ header {
 	color: #fff;
 	text-transform: uppercase;
 	margin-bottom: 60px;
+	
+	/* Hiệu ứng animation tồn tại */
+	animation-duration: 2s; 
+	/* Thời gian animation chạy */
+	animation-iteration-count: 1;
+	/* animation delay */
+	animation-delay: 0s;
 }
 
 .heading-primary__main {
@@ -63,6 +70,7 @@ header {
 	font-size: 62px;
 	font-weight: 400;
 	letter-spacing: 15px;
+	animation: moveInLeft 1s ease-out;
 }
 
 .heading-primary__sub {
@@ -70,6 +78,7 @@ header {
 	font-size: 20px;
 	font-weight: 700;
 	letter-spacing: 18px;
+	animation: moveInRight 1s ease-out;
 }
 
 .btn,
@@ -111,7 +120,7 @@ header {
 	left: 0;
 	border-radius: 100px;
 	z-index: -1;
-	transition: all .4s;
+	transition: all 0.4s;
 }
 
 .btn:hover::after {
@@ -121,4 +130,63 @@ header {
 
 .btn-white::after {
 	background-color: #fff;
+}
+
+.btn-animated{
+	animation: moveInBottom .5s ease-out .75s;
+	animation-fill-mode: backwards;
+}
+/* Animation header */
+@keyframes animationtest {
+	0% {
+		opacity: 0;
+		transform: translate(0, -100px);
+	}
+	80% {
+		transform: translate(0, -20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+@keyframes moveInLeft{
+	0% {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+	80% {
+		transform: translateX(10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes moveInRight{
+	0% {
+		opacity: 0;
+		transform: translateX(100px);
+	}
+	80% {
+		transform: translateX(-10px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes moveInBottom{
+	0% {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
