@@ -30,6 +30,8 @@ header {
 	background-position: top;
 	position: relative;
     height: 95vh;
+	-webkit-clip-path: ellipse(72% 57% at 52% 33%);
+	clip-path: ellipse(72% 57% at 52% 33%);
 }
 
 .text-box {
